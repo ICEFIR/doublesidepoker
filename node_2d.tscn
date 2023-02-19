@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://bin3y88svf6kj"]
+
+[ext_resource type="FontFile" uid="uid://cy6whjok0rdy0" path="res://fonts/MesloLGLDZ-Regular.ttf" id="1_ff61a"]
+[ext_resource type="PackedScene" uid="uid://dtb6xv8fittoq" path="res://player.tscn" id="1_rndx4"]
+[ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_v1hmg"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_v1hmg")
+
+[node name="Player1" parent="." instance=ExtResource("1_rndx4")]
+position = Vector2(-53, -11)
+
+[node name="Player2" parent="." instance=ExtResource("1_rndx4")]
+position = Vector2(704, -15)
+
+[node name="TokenPoolLabel" type="Label" parent="."]
+offset_left = 503.0
+offset_top = 103.0
+offset_right = 632.0
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ff61a")
+text = "Token Pool:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="TokenPoolLabel"]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 265.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ff61a")
+text = "0"
+vertical_alignment = 1
+
+[node name="GameStateLabel" type="Label" parent="."]
+offset_left = 486.0
+offset_top = 62.0
+offset_right = 615.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ff61a")
+text = "Game State:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameStateText" type="Label" parent="GameStateLabel"]
+layout_mode = 0
+offset_left = 126.0
+offset_right = 255.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ff61a")
+text = "State"
+vertical_alignment = 1
+
+[node name="Events" type="RichTextLabel" parent="."]
+offset_left = 388.0
+offset_top = 139.0
+offset_right = 759.0
+offset_bottom = 633.0
+scroll_following = true
